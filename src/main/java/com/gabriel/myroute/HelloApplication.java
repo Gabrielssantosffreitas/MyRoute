@@ -13,7 +13,7 @@ public class HelloApplication extends Application {
     public void start(Stage stage) throws IOException {
 
         // Cria um objeto FXMLLoader para carregar a interface gráfica (FXML)
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/gabriel/myroute/SearchOrPlan.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("/com/gabriel/myroute/Home.fxml"));
 
     // Carrega o arquivo FXML e cria a cena (a interface visual que será mostrada na janela)
         Scene scene = new Scene(fxmlLoader.load());

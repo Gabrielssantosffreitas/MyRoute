@@ -6,15 +6,14 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="501.0" prefWidth="492.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="501.0" prefWidth="492.0" xmlns="http://javafx.com/javafx/24.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.gabriel.myroute.controller.Home.HomeController">
    <children>
       <Label alignment="CENTER" layoutY="7.0" styleClass="lbl-primary" text="Login or Sign Up" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <font>
             <Font name="System Bold Italic" size="28.0" />
          </font>
       </Label>
-      <Button layoutX="135.0" layoutY="193.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" prefHeight="58.0" prefWidth="222.0" text="Login" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="135.0">
+      <Button fx:id="inputButtonLogin" layoutX="135.0" layoutY="193.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#logar" prefHeight="58.0" prefWidth="222.0" text="Login" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="135.0">
          <font>
             <Font size="23.0" />
          </font>
@@ -23,7 +22,7 @@
             <String fx:value="btn-lg" />
          </styleClass>
       </Button>
-      <Button layoutX="135.0" layoutY="278.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="222.0" text="sign UP" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="135.0">
+      <Button fx:id="inputButtonLogin" layoutX="135.0" layoutY="278.0" mnemonicParsing="false" onAction="#singUp" prefHeight="52.0" prefWidth="222.0" text="sign UP" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="135.0">
          <font>
             <Font size="23.0" />
          </font>
