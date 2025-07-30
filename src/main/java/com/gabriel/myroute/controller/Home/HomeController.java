@@ -36,6 +36,7 @@ public class HomeController implements Initializable {
                         "Login"
                 );
             } catch (Exception e) {
+            	System.out.println(e.getMessage());
                 AlertException.tratamentoDeErro(e);
             }
     }

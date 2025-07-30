@@ -1,7 +1,12 @@
 package com.gabriel.myroute.controller.login;
 import java.io.IOException;
+
+import com.gabriel.myroute.controller.SarchOrPlan.SarchOrPlanController;
 import com.gabriel.myroute.controller.interfaces.Controller;
 import com.gabriel.myroute.controller.util.CreateScane;
+import com.gabriel.myroute.entity.User;
+import com.gabriel.myroute.service.login.LoginService;
+import com.gabriel.myroute.util.Alerts;
 import com.gabriel.myroute.controller.util.AlertException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -18,23 +23,28 @@ public class LoginController implements Controller {
 
     @FXML
     void logar(ActionEvent event) {// quando o botao logar for clicado
-        boolean isLogado = true;
+        LoginService lg = new LoginService();
+        
+        User usuario = lg.logar(inputTextFildEmail.getText(), inputTextFildSenha.getText());
+    	
 
-        if (isLogado) {
+        if (usuario != null) {
             try {
-                CreateScane.createScane(new FXMLLoader(
-                        LoginController.class.getResource("/com/gabriel/myroute/SearchOrPlan.fxml")),
+            	
+              SarchOrPlanController controller = (SarchOrPlanController) CreateScane.createScane(new FXMLLoader(
+                        LoginController.class.getResource("/com/gabriel/myroute/SearchPlan/Main.fxml")),
                         event,
-                        ""
+                        "Serch or plan"
                 );
+              controller.setUser(usuario);
+              
             } catch (IOException e) {
                 AlertException.tratamentoDeErro(e);
+                e.printStackTrace();
             }
         } else {
-            Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("ERROR");
-            alert.setHeaderText("Esse usuario nao existe");
-            alert.show();
+        	Alerts alert = new Alerts();
+            alert.alertError("FALHA AO LOGAR", "erro no login", "Por favor verificar se o email e a senha estão corretas");
         }
     }
 }

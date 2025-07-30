@@ -31,7 +31,7 @@ public class UserRepository {
 
             linhas = statement.executeUpdate();// verificando se alguma linha foi alterada
         } catch (SQLException e) {
-            e.printStackTrace();
+            linhas = 0;
         }
         if (linhas > 0) {// se alguma linha foi alterada  retorna true
             return true;
